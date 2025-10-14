@@ -63,6 +63,9 @@ stdenv.mkDerivation rec {
     "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
     "-DGLIB_SCHEMAS_DIR=${glib.getSchemaPath gsettings-desktop-schemas}"
     "-DQT_PLUGINS_DIR=${placeholder "out"}/${qtbase.qtPluginPrefix}"
+
+    # Workaround CMake 4 compat
+    (lib.cmakeFeature "CMAKE_POLICY_VERSION_MINIMUM" "3.31")
   ]
   ++ lib.optionals useQt6 [
     "-DUSE_QT6=true"
