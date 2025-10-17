@@ -520,6 +520,7 @@ in
   etebase-server = runTest ./etebase-server.nix;
   etesync-dav = runTest ./etesync-dav.nix;
   evcc = runTest ./evcc.nix;
+  facter = runTest ./facter;
   fail2ban = runTest ./fail2ban.nix;
   fakeroute = runTest ./fakeroute.nix;
   fancontrol = runTest ./fancontrol.nix;
@@ -574,6 +575,7 @@ in
   fluent-bit = runTest ./fluent-bit.nix;
   fluentd = runTest ./fluentd.nix;
   fluidd = runTest ./fluidd.nix;
+  fontconfig-bitmap-fonts = runTest ./fontconfig-bitmap-fonts.nix;
   fontconfig-default-fonts = runTest ./fontconfig-default-fonts.nix;
   forgejo = import ./forgejo.nix {
     inherit runTest;
@@ -785,7 +787,7 @@ in
   keepalived = runTest ./keepalived.nix;
   keepassxc = runTest ./keepassxc.nix;
   kerberos = handleTest ./kerberos/default.nix { };
-  kernel-generic = handleTest ./kernel-generic.nix { };
+  kernel-generic = handleTest ./kernel-generic { };
   kernel-latest-ath-user-regd = runTest ./kernel-latest-ath-user-regd.nix;
   kernel-rust = handleTest ./kernel-rust.nix { };
   keter = runTest ./keter.nix;
@@ -991,7 +993,6 @@ in
   neo4j = runTest ./neo4j.nix;
   netbird = runTest ./netbird.nix;
   netbox-upgrade = runTest ./web-apps/netbox-upgrade.nix;
-  netbox_4_1 = handleTest ./web-apps/netbox/default.nix { netbox = pkgs.netbox_4_1; };
   netbox_4_2 = handleTest ./web-apps/netbox/default.nix { netbox = pkgs.netbox_4_2; };
   netbox_4_3 = handleTest ./web-apps/netbox/default.nix { netbox = pkgs.netbox_4_3; };
   netdata = runTest ./netdata.nix;
@@ -1148,6 +1149,7 @@ in
   oxidized = handleTest ./oxidized.nix { };
   pacemaker = runTest ./pacemaker.nix;
   packagekit = runTest ./packagekit.nix;
+  pairdrop = runTest ./web-apps/pairdrop.nix;
   paisa = runTest ./paisa.nix;
   pam-file-contents = runTest ./pam/pam-file-contents.nix;
   pam-lastlog = runTest ./pam/pam-lastlog.nix;

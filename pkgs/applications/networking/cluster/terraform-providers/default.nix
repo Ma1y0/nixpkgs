@@ -82,7 +82,9 @@ let
       passthru = attrs // {
         inherit provider-source-address;
         updateScript = writeShellScript "update" ''
-          ./pkgs/applications/networking/cluster/terraform-providers/update-provider "${owner}_${lib.removePrefix "terraform-provider-" repo}"
+          ./pkgs/applications/networking/cluster/terraform-providers/update-provider "${
+            lib.replaceStrings [ "registry.terraform.io/" "/" ] [ "" "_" ] provider-source-address
+          }"
         '';
       };
     }
@@ -242,7 +244,7 @@ let
     okta = lib.warnOnInstantiate "terraform-providers.okta has been renamed to terraform-providers.okta_okta" actualProviders.okta_okta;
     oktaasa = lib.warnOnInstantiate "terraform-providers.oktaasa has been renamed to terraform-providers.oktadeveloper_oktaasa" actualProviders.oktadeveloper_oktaasa;
     opennebula = lib.warnOnInstantiate "terraform-providers.opennebula has been renamed to terraform-providers.opennebula_opennebula" actualProviders.opennebula_opennebula;
-    openstack = lib.warnOnInstantiate "terraform-providers.openstack has been renamed to terraform-providers.openstack_openstack" actualProviders.openstack_openstack;
+    openstack = lib.warnOnInstantiate "terraform-providers.openstack has been renamed to terraform-providers.terraform-provider-openstack_openstack" actualProviders.terraform-provider-openstack_openstack;
     opentelekomcloud = lib.warnOnInstantiate "terraform-providers.opentelekomcloud has been renamed to terraform-providers.opentelekomcloud_opentelekomcloud" actualProviders.opentelekomcloud_opentelekomcloud;
     opsgenie = lib.warnOnInstantiate "terraform-providers.opsgenie has been renamed to terraform-providers.opsgenie_opsgenie" actualProviders.opsgenie_opsgenie;
     oci = lib.warnOnInstantiate "terraform-providers.oci has been renamed to terraform-providers.oracle_oci" actualProviders.oracle_oci;
