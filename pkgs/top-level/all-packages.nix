@@ -1882,6 +1882,8 @@ with pkgs;
 
   coreboot-configurator = libsForQt5.callPackage ../tools/misc/coreboot-configurator { };
 
+  intel-oneapi = callPackage ../development/libraries/intel-oneapi { };
+
   sway-unwrapped = callPackage ../by-name/sw/sway-unwrapped/package.nix {
     wlroots = wlroots_0_19;
   };
@@ -11638,6 +11640,7 @@ with pkgs;
     k3s_1_31
     k3s_1_32
     k3s_1_33
+    k3s_1_34
     ;
   k3s = k3s_1_33;
 
@@ -11722,7 +11725,7 @@ with pkgs;
 
   lemonbar-xft = callPackage ../applications/window-managers/lemonbar/xft.nix { };
 
-  lenovo-legion = libsForQt5.callPackage ../os-specific/linux/lenovo-legion/app.nix { };
+  lenovo-legion = qt6Packages.callPackage ../os-specific/linux/lenovo-legion/app.nix { };
 
   libkiwix = callPackage ../applications/misc/kiwix/lib.nix { };
 
@@ -12366,10 +12369,6 @@ with pkgs;
   rawtherapee = callPackage ../applications/graphics/rawtherapee {
     fftw = fftwSinglePrec;
   };
-
-  rclone = callPackage ../applications/networking/sync/rclone { };
-
-  rclone-browser = libsForQt5.callPackage ../applications/networking/sync/rclone/browser.nix { };
 
   reaper = callPackage ../applications/audio/reaper {
     jackLibrary = libjack2; # Another option is "pipewire.jack".
@@ -14230,8 +14229,6 @@ with pkgs;
   celestia = callPackage ../applications/science/astronomy/celestia {
     inherit (gnome2) gtkglext;
   };
-
-  convertall = qt5.callPackage ../applications/science/misc/convertall { };
 
   faissWithCuda = faiss.override {
     cudaSupport = true;

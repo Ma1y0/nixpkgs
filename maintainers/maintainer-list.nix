@@ -1644,6 +1644,14 @@
     githubId = 106511;
     name = "Andrew Kelley";
   };
+  andrewzah = {
+    name = "Andrew Zah";
+    github = "andrewzah";
+    githubId = 9789467;
+    email = "nix@andrewzah.com";
+    matrix = "@andrewzah:matrix.abare.party";
+    keys = [ { fingerprint = "D87B D9DC F11B ACD6 CDB4 0CB2 1373 2FB1 3E61 E0BE"; } ];
+  };
   Andy3153 = {
     name = "Andrei Dobrete";
     email = "andy3153@protonmail.com";
@@ -7871,6 +7879,12 @@
     github = "EsAu79p";
     githubId = 21313906;
     name = "EsAu";
+  };
+  esch = {
+    name = "Austin Eschweiler";
+    github = "Eschguy";
+    githubId = 8880292;
+    email = "austin.eschweiler@gmail.com";
   };
   esclear = {
     github = "esclear";
@@ -26029,6 +26043,12 @@
     github = "three";
     githubId = 1761259;
     name = "Eric Roberts";
+  };
+  thrix = {
+    email = "mvadkert@redhat.com";
+    github = "thrix";
+    githubId = 633969;
+    name = "Miroslav Vadkerti";
   };
   thtrf = {
     email = "thtrf@proton.me";
